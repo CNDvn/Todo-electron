@@ -1,0 +1,14 @@
+{
+  "name": "todo-electron",
+  "version": "1.0.0",
+  "description": "Using electron make a todo list application",
+  "main": "main.js",
+  "author": "CNDvn (Banh Duc Hieu)",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^28.1.3"
+  }
+}
