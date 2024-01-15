@@ -12,11 +12,28 @@ const createWindow = () => {
     })
 
     win.loadFile("index.html")
+    win.webContents.openDevTools()
 }
 
 app.whenReady().then(()=>{
-    ipcMain.handle("ping", () => "pong")
+    ipcMain.handle("handleData", (event,dataInput) => {
+        let id =-1 
+        if(!dataInput.id){
+            id = data.length + 1
+            data.push(dataInput)
+        }else{
+            id = dataInput.id
+            data[id- 1] = dataInput
+        }
+        return id
+    })
+
+    ipcMain.handle("changeStatus", (event,dataInput) => {
+        data[dataInput.id - 1].status = dataInput.status
+    })
+
     ipcMain.handle("getData", () => data)
+    
 
     createWindow()
 }).catch((err)=> {

@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Todo list</title>
 </head>
 <body>
-    <div style="background-color: aqua;">
+    <div id="input">
         <h4>What need to do?</h4>
         <input type="text" name="title" id="title" placeholder="input title..."> </br>
         <textarea name="content" id="content" cols="30" rows="10" placeholder="input content..."></textarea> </br>
-        <button>Add</button>
+        <button onclick="addNewData()">Add</button>
     </div>
-    <div>
-        <div>
+    <div class="container">
+        <div id="todo">
             <h5>Todo</h5>
-            <div id="todo">
-                
-            </div>
+            <ul>
+            </ul>
         </div>
-        <div>
+        <div id="doing">
             <h5>Doing</h5>
+            <ul>
+            </ul>
         </div>
-        <div>
+        <div id="done">
             <h5>Done</h5>
+            <ul>
+            </ul>
         </div>
     </div>
 
